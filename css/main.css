@@ -1,0 +1,356 @@
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+body {
+	font-family: Lato, sans-serif;
+	background-color: #BAAD99;
+	line-height: 1.5;
+}
+
+#container {
+	height: 80em;
+}
+
+#main {
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	border-radius: 5px;
+}
+
+h3 {
+	font-size: 1.250em;
+	padding: 1em 0;
+	text-align: center;
+	color: #6D2416;
+}
+
+#logo {
+	text-align: center;
+}
+
+header {
+	margin-bottom: 2em;
+	padding-top: 2em;
+	background-color: #6D2416;
+	border-bottom: 5px solid #A89D8A;
+	box-shadow: 0 0 10px #555555;
+}
+
+h1, h2 {
+	color: #BAAD99;
+}
+
+h1 {
+	font-family: 'Rock Salt', sans-serif;
+	font-size: 1.5625em; 
+  text-shadow: 1px 1px 1px rgba(20, 20, 20, .7);
+}
+
+h2 {
+	font-size: 1.250em;
+}
+
+nav {
+	text-align: center;
+	padding: 1.5em 0;
+	margin: 1em 0 0;
+}
+
+nav li {
+	display: inline-block;
+	font-size: 0.9375em;
+}
+
+nav a {
+	padding: 15px 10px;
+	color: #BAAD99;
+}
+
+nav a:hover {
+	border-bottom: 2px solid #BAAD99;
+}
+
+nav a.selected {
+	font-weight: 700;
+}
+
+footer {
+	font-size: 0.750em;
+	text-align: center;
+	clear: both;
+	margin: 10em 0 0 0;
+	padding: 60px 0 20px;
+	background-color: #6D2416;
+}
+
+#welcome-image img {
+	display: block;
+	max-width: 80%;
+	margin: 3em auto 0;
+	border: 10px solid #A89D8A;
+	border-radius: 5px;
+}
+
+#welcome {
+	margin: 1em 0 0 0;
+}
+
+#welcome p, #welcome h4 {
+	max-width: 80%;
+	margin: 2em auto;
+	text-align: center;
+	color: #6D2416;
+}
+
+#welcome h4 {
+	font-size: 1.5625em;
+}
+
+blockquote {
+	max-width: 15em;
+	margin: 0 auto;
+	position: relative;
+	top: 2em;
+	font-style: italic;
+	font-size: 1.125em;
+  color: #6D2416;
+	text-align: center;
+	padding: 1em 0;
+	clear: both;
+	border-top: 3px solid #A89D8A;
+	border-bottom: 3px solid #A89D8A;
+}
+
+#gallery {
+	display: block;
+}
+
+#gallery li {
+	max-width: 47%;
+	margin: 1.5%;
+	float: left;
+	background-color: #A89D8A;
+	border-radius: 5px;
+	border: 10px solid #A89D8A;
+}
+
+.gallery-caption {
+	padding: 0.2em;
+	font-size: 1.125em;
+  color: #6D2416;
+}
+
+.gallery-nav a {
+	display: inline-block;
+	color: #6D2416;
+}
+
+.gallery-nav a:hover {
+	font-weight: bold;
+}
+
+#gallery-back a {
+	margin-left: 2em;
+	margin-bottom: 1.5em;
+}
+
+#gallery-next a {
+	float: right;
+	margin-right: 3em;
+	margin-top: 1.5em;
+	clear: both;
+}
+
+#about-image img {
+	display: block;
+	max-width: 80%;
+	margin: 3em auto 0;
+	border: 10px solid #A89D8A;
+	border-radius: 5px;
+}
+
+#profile h4 {
+	font-size: 1.125em;
+	color: #6D2416;
+	text-align: center;
+	margin-bottom: 2em;
+	margin-top: -0.8em;
+}
+
+#profile {
+	margin: 1em auto;
+	max-width: 80%;
+}
+
+#profile p {
+	color: #303030;
+}
+
+#about-nav {
+	margin: 5em 0 0 0;
+}
+
+#about-nav a {
+	font-size: 0.9375em;
+	display: block;
+	color: #6D2416;
+	padding: 5px;
+	text-align: center;
+}
+
+#about-nav a:hover {
+	font-weight: bold;
+}
+
+#contact-image img {
+	display: block;
+	max-width: 80%;
+	margin: 3em auto 0;
+	border: 10px solid #A89D8A;
+	border-radius: 5px;
+}
+
+#contact-info {
+	margin: 1em auto;
+	margin-bottom: 3em;
+}
+
+.mail a {
+	display: block;
+	margin: 1em 0;
+	padding: 5px;
+	text-align: center;
+	color: #6D2416;
+}
+
+.mail a:hover {
+	font-weight: bold;
+}
+
+#contact-nav a {
+	font-size: 0.9375em;
+	display: block;
+	color: #6D2416;
+	margin: 5em 0;
+	padding: 5px;
+	text-align: center;
+}
+
+#contact-nav a:hover {
+	font-weight: bold;
+}
+
+@media (min-width: 30em) {
+    
+	#welcome h4 {
+		max-width: 14em;
+	}
+
+	blockquote {
+		max-width: 18em;
+	}
+}
+
+@media (min-width: 41em) {
+
+	  header {
+		  overflow: auto;
+	  }
+
+    #container {
+		  height: 70em;
+	  }
+
+    nav {
+		  float: right;
+		  margin-right: 10%;
+		  margin-top: 2em;
+		  font-size: 1.125em;
+	  }
+
+    #logo {
+		  float:left;
+		  margin-left: 10%;
+	  }
+
+    #welcome h4 {
+		  font-size: 1.6875em;
+	  }
+
+    #gallery li {
+		  width: 30.3333333333%;
+	  }
+    
+	  #welcome h4 {
+		  max-width: 20em;
+	  }
+    
+	  blockquote {
+		  max-width: 26em;
+		  font-size: 1.125em;
+	  }
+}
+
+@media (min-width: 56em) {
+
+	  #container {
+		  height: 60em;
+	  }
+
+    h2 {
+		  margin-bottom: 2em;
+	  }
+
+    #gallery li {
+		  width: 22%;
+	  }
+
+    #welcome-image img, #about-image img, #contact-image img {
+		  max-width: 60%;
+		  float: left;
+		  margin: 0 2em 0 0;
+	  }
+
+    #welcome, #profile, #contact-info {
+		  overflow: auto;
+		  margin: 5em 0;
+	  }
+    
+	   #welcome h4 {
+		   max-width: 14em;
+	   }
+
+     blockquote {
+		  margin-top: 8em;
+		  max-width: 33em;
+	   }
+
+     #about-nav {
+		  margin: 7em 0 0 0;
+	   }
+
+     #contact-nav {
+		  margin-top: 10em;
+	   }
+}
+
+@media (min-width: 73em) {
+
+	  h1 {
+		  font-size: 1.875em;
+	  }
+
+    #main {
+		  max-width: 80%;
+	  }
+}
