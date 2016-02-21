@@ -100,6 +100,16 @@ footer {
 	margin: 10em 0 0 0;
 	padding: 60px 0 20px;
 	background-color: #6d2416;
+  color: #baad99;
+}
+
+footer a {
+    color: #baad99;
+    border-bottom: 1px dotted;
+}
+
+footer a:hover {
+    font-weight: bold;
 }
 
 /*** HOME PAGE ***/
@@ -164,7 +174,7 @@ blockquote {
 }
 
 .gallery-nav a:hover {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .gallery-back a {
