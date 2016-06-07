@@ -187,11 +187,10 @@ header {
 #menu-button {
     background-color: #6b2416;
     color: #baad99;
-    margin: 0 3.2em 1em 0;
     padding: 0.6em;
     font-size: 1.125em;
     float: right;
-    border: solid #baad99;
+    border: solid;
     border-radius: 7px;
     box-shadow: 1px 1px 1px rgba(20, 20, 20, .7); /* offset-x | offset-y | blur-radius | color */
 }
@@ -201,24 +200,19 @@ header {
     color: #6b2416;
 }
 
-nav {
-    padding: 0;
-    position: relative;
+#nav-menu {
+    float: right;
+    width: 6em;
+    margin: 4em -5.3em 0 0;
+    display: none;
 }
 
-#nav-menu {
-    position: fixed;
-    width: 15em;
-    height: 15em;
-    top: 7.5em;
-    right: 0;
-    display: none;
-    z-index: 10000;
-    background-color: rgba(109, 36, 22, 0.95);
-    border-radius: 0 0 0 5px;
+nav {
+    padding: 0;
 }
 
 nav li {
+    clear: both;
     text-align: center;
     padding: 0.8em 0;
 }
@@ -228,17 +222,17 @@ nav li a {
 }
 
 nav li:first-child {
-    padding-top: 1.5em;
+    padding-top: 1em;
 }
 
 nav li:last-child {
-    padding-bottom: 1.5em;
+    padding-bottom: 1em;
 }
 
 nav li a.selected {
     font-weight: bold;
     padding: 0.8em;
-    border-bottom: 3px solid #baad99;
+    border-bottom: 3px solid;
 }
 
 nav li a:hover {
@@ -281,6 +275,7 @@ blockquote {
     padding: 5em 0 8em 0;
     text-align: center;
     font-size: 1em;
+    clear: both;
 }
 
 
@@ -316,26 +311,37 @@ blockquote {
 	  border: 10px solid #a89d8a;
 }
 
-.gallery-nav a {
-	  display: inline-block;
-	  color: #6d2416;
-    text-align: initial;
+.gallery-nav {
+    clear: both;
+    width: 12em;
 }
 
-.gallery-nav a:hover {
-    font-weight: bold;
+.gallery-nav a {
+    color: #6d2416;
+    padding: 0.6em;
+    border: 3px solid;
+    border-radius: 5px; 
 }
 
 .gallery-back a {
-	  margin-left: 2em;
+	  margin-left: 1em;
 	  margin-bottom: 1.5em;
 }
 
+.gallery-next {
+    float: right;
+}
+
 .gallery-next a {
-	  float: right;
-	  margin-right: 3em;
-	  margin-top: 1.5em;
-	  clear: both;
+    margin: 1.5em 1em 0 0;
+    clear: both;
+}
+
+.gallery-nav a:hover {
+    background-color: #6d2416;
+    color: #baad99;
+    border: 3px solid;
+    border-radius: 5px;
 }
 
 /* Create figcaption overlay */
@@ -382,7 +388,7 @@ figure:hover {
 #about {
     margin: 0 auto;
     padding: 6em 2em;
-    text-align: center;    
+    text-align: center;
     border-bottom: 1px solid #a89d8a;
 }
 
@@ -412,7 +418,7 @@ figure:hover {
 #contact {
     margin: 0 auto;
     padding: 6em 0;
-    text-align: center;    
+    text-align: center;
     border-bottom: 1px solid #a89d8a;
 }
 
@@ -439,7 +445,7 @@ figure:hover {
     background-color: #baad99;
     color: #6d2416;
     padding: 0.8em;
-    border: 3px solid #6d2416;
+    border: 3px solid;
     border-radius: 5px;
 }
 
@@ -449,7 +455,6 @@ figure:hover {
     padding: 0.8em;
     border-radius: 5px;
 }
-
 
 /* ====== FOOTER ====== */
 
@@ -481,7 +486,11 @@ footer p:first-child {
     #logo {
         padding-left: 3em;
     }
-    
+
+    #menu-button {
+        margin-right: 3em;
+    }
+
     #gallery li {
 		    width: 30.3333333333%;
 	  }
@@ -493,7 +502,7 @@ footer p:first-child {
 }
 
 @media screen and (min-width: 56.25em) {
-    
+
     #gallery li {
 		    width: 22%;
 	  }
@@ -511,35 +520,6 @@ footer p:first-child {
 @media screen and (min-width: 68.75em) {
 
     #logo {
-        padding-left: 4em;
-    }
-
-    #menu-button {
-        margin-right: 4em;
-    }
-
-    #nav-menu {
-        right: 1em;
-        border-radius: 0 0 5px 5px;
-    }
-    
-    .profile {
-        max-width: 60%;
-    }
-
-}
-
-@media screen and (min-width: 75em) {
-    
-    .profile {
-        max-width: 50%;
-    }
-    
-}
-
-@media screen and (min-width: 87.5em) {
-
-    #logo {
         padding-left: 5em;
     }
 
@@ -547,9 +527,29 @@ footer p:first-child {
         margin-right: 5em;
     }
 
-    #nav-menu {
-        right: 2em;
+    header h1 {
+        font-size: 1.5625em;
     }
+
+    header p {
+        font-size: 1.4375em;
+    }
+
+    .profile {
+        max-width: 60%;
+    }
+
+}
+
+@media screen and (min-width: 75em) {
+
+    .profile {
+        max-width: 50%;
+    }
+
+}
+
+@media screen and (min-width: 87.5em) {
 
     .profile {
         max-width: 40%;
@@ -560,27 +560,6 @@ footer p:first-child {
 @media screen and (min-width: 93.75em) {
 
     #logo {
-        padding-left: 6em;
-    }
-
-    #menu-button {
-        margin-right: 6em;
-    }
-
-    #nav-menu {
-        right: 3em;
-    }
-    
-    
-    .profile {
-        max-width: 35%;
-    }
-
-}
-
-@media screen and (min-width: 100em) {
-
-    #logo {
         padding-left: 7em;
     }
 
@@ -588,12 +567,12 @@ footer p:first-child {
         margin-right: 7em;
     }
 
-    #nav-menu {
-        right: 4em;
-    }
+}
+
+@media screen and (min-width: 100em) {
 
     .profile {
-        max-width: 30%;
+        max-width: 35%;
     }
 
 }
