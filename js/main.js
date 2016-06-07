@@ -16,7 +16,6 @@ var showHideMenu = function() {
         } else {
 
             navMenu.style.display = "block";
-            menuButton.style.marginBottom = "1em";
             menuIsDisplayed = true;
 
         }

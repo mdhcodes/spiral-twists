@@ -175,9 +175,6 @@ header {
     right: 0;
     z-index: 100;
     padding: 1.5em 1.5em 1em;
-    transition: all 0.4s ease-in-out; /* Animate: property name | duration | delay */
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;    
     overflow: auto;
 	  border-bottom: 5px solid #a89d8a;
 	  box-shadow: 0 0 10px #555555; /* offset-x | offset-y | blur-radius | color */
@@ -190,11 +187,12 @@ header {
 #menu-button {
     background-color: #6b2416;
     color: #baad99;
+    margin: 0 3.2em 1em 0;
     padding: 0.6em;
     font-size: 1.125em;
     float: right;
     border: solid #baad99;
-    border-radius: 7px;    
+    border-radius: 7px;
     box-shadow: 1px 1px 1px rgba(20, 20, 20, .7); /* offset-x | offset-y | blur-radius | color */
 }
 
@@ -203,18 +201,26 @@ header {
     color: #6b2416;
 }
 
-#nav-menu {
-    display: none;
-}
-
 nav {
     padding: 0;
+    position: relative;
+}
+
+#nav-menu {
+    position: fixed;
+    width: 15em;
+    height: 15em;
+    top: 7.5em;
+    right: 0;
+    display: none;
+    z-index: 10000;
+    background-color: rgba(109, 36, 22, 0.95);
+    border-radius: 0 0 0 5px;
 }
 
 nav li {
-    clear: both;
     text-align: center;
-    padding: 1em 0;
+    padding: 0.8em 0;
 }
 
 nav li a {
@@ -222,8 +228,7 @@ nav li a {
 }
 
 nav li:first-child {
-    border-top: 1px solid #baad99;
-    padding-top: 2em;
+    padding-top: 1.5em;
 }
 
 nav li:last-child {
@@ -232,9 +237,6 @@ nav li:last-child {
 
 nav li a.selected {
     font-weight: bold;
-    /*background-color: #baad99;*/
-    /*color: #6b2416;*/
-    /*border-radius: 5px;*/
     padding: 0.8em;
     border-bottom: 3px solid #baad99;
 }
@@ -279,7 +281,6 @@ blockquote {
     padding: 5em 0 8em 0;
     text-align: center;
     font-size: 1em;
-    clear: both;	  
 }
 
 
@@ -449,6 +450,7 @@ figure:hover {
     border-radius: 5px;
 }
 
+
 /* ====== FOOTER ====== */
 
 footer {
@@ -474,43 +476,11 @@ footer p:first-child {
 
 /* ====== MEDIA QUERIES ====== */
 
-@media screen and (min-width: 31.25em) {
-
-    nav li:first-child {
-        border-top: none;
-    }
-
-    header {
-        padding: 1.5em 2em 1em;
-    }
-
-    #nav-menu {
-        text-align: center;
-        border-top: 1px solid #baad99;
-        clear: both;
-    }
-
-    #nav-menu li {
-        display: inline-block;
-        margin: 1em 1em 0 0;
-    }
-
-    #nav-menu li a {
-        padding: 0.8em;
-    }
-
-}
-
 @media screen and (min-width: 40em) {
-    
-    #nav-menu li {
-        float: right;
-    }
 
-    #menu-button {        
-        margin-right: 1em;
+    #logo {
+        padding-left: 3em;
     }
-    
     
     #gallery li {
 		    width: 30.3333333333%;
@@ -523,18 +493,6 @@ footer p:first-child {
 }
 
 @media screen and (min-width: 56.25em) {
-
-    header {
-        padding: 1.5em 3em 1em;
-    }
-
-    #menu-button {        
-        margin-right: 2em;
-    }
-
-    #nav-menu li a {
-        margin-right: 1em;
-    }
     
     #gallery li {
 		    width: 22%;
@@ -552,18 +510,19 @@ footer p:first-child {
 
 @media screen and (min-width: 68.75em) {
 
-    header {
-        padding: 1.5em 4em 1em;
+    #logo {
+        padding-left: 4em;
     }
 
-    #menu-button {        
-        margin-right: 3em;
+    #menu-button {
+        margin-right: 4em;
     }
 
-    #nav-menu li a {
-        margin-right: 2em;
+    #nav-menu {
+        right: 1em;
+        border-radius: 0 0 5px 5px;
     }
-
+    
     .profile {
         max-width: 60%;
     }
@@ -580,6 +539,18 @@ footer p:first-child {
 
 @media screen and (min-width: 87.5em) {
 
+    #logo {
+        padding-left: 5em;
+    }
+
+    #menu-button {
+        margin-right: 5em;
+    }
+
+    #nav-menu {
+        right: 2em;
+    }
+
     .profile {
         max-width: 40%;
     }
@@ -588,6 +559,19 @@ footer p:first-child {
 
 @media screen and (min-width: 93.75em) {
 
+    #logo {
+        padding-left: 6em;
+    }
+
+    #menu-button {
+        margin-right: 6em;
+    }
+
+    #nav-menu {
+        right: 3em;
+    }
+    
+    
     .profile {
         max-width: 35%;
     }
@@ -596,12 +580,23 @@ footer p:first-child {
 
 @media screen and (min-width: 100em) {
 
+    #logo {
+        padding-left: 7em;
+    }
+
+    #menu-button {
+        margin-right: 7em;
+    }
+
+    #nav-menu {
+        right: 4em;
+    }
+
     .profile {
         max-width: 30%;
     }
 
 }
-
 
 
 /* ==========================================================================
