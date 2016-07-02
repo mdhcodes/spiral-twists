@@ -182,6 +182,7 @@ header {
 
 #logo {
     float: left;
+    margin: 0 0 1.5em 0;
 }
 
 #menu-button {
@@ -201,19 +202,18 @@ header {
 }
 
 #nav-menu {
-    float: right;
-    width: 6em;
-    margin: 4em -5.3em 0 0;
+    margin: 1em auto 0;
+    text-align: center;
     display: none;
 }
 
 nav {
     padding: 0;
+    clear: both;
 }
 
 nav li {
     clear: both;
-    text-align: center;
     padding: 0.8em 0;
 }
 
@@ -319,8 +319,7 @@ blockquote {
 .gallery-nav a {
     color: #6d2416;
     padding: 0.6em;
-    border: 3px solid;
-    border-radius: 5px; 
+    height: 3em;
 }
 
 .gallery-back a {
@@ -502,6 +501,12 @@ footer p:first-child {
 }
 
 @media screen and (min-width: 56.25em) {
+    
+    nav li {
+        display: inline-block;
+        width: 6em;
+        margin: 0 2em 0 0;
+    }    
 
     #gallery li {
 		    width: 22%;

@@ -4,6 +4,7 @@ var showHideMenu = function() {
 
     var menuButton = document.getElementById("menu-button");
     var navMenu = document.getElementById("nav-menu");
+    var nav = document.getElementById("nav");
     var menuIsDisplayed = false;
 
     menuButton.onclick = function() {
@@ -11,11 +12,13 @@ var showHideMenu = function() {
         if(menuIsDisplayed) {
 
             navMenu.style.display = "none";
+            nav.style.borderTop = "none";
             menuIsDisplayed = false;
 
         } else {
 
             navMenu.style.display = "block";
+            nav.style.borderTop = "thin solid #baad99";
             menuIsDisplayed = true;
 
         }
@@ -24,6 +27,7 @@ var showHideMenu = function() {
     navMenu.onclick = function() {
 
         navMenu.style.display = "none";
+        nav.style.borderTop = "none";
         menuIsDisplayed = false;
 
     };
@@ -42,5 +46,3 @@ $(document).ready(function() {
         $(this).addClass("selected");
     });
 });
-
-
