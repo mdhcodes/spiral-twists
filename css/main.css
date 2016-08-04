@@ -17,7 +17,7 @@ body {
 #main {
     max-width: 90%;
     margin: 0 auto;
-    padding: 12em 0 0;    
+    padding: 12em 0 0;
 }
 
 a {
@@ -26,7 +26,7 @@ a {
 }
 
 a:hover {
-    font-weight: 700;
+    color: #d5caba;
 }
 
 li {
@@ -45,7 +45,6 @@ img {
     display: block;
 	  max-width: 100%;
     height: auto;
-	  border-radius: 5px;
     text-align: center;
 }
 
@@ -64,12 +63,18 @@ hr {
     border: 1px solid #a89d8a;
 }
 
+h2,
+h3 {
+    font-weight: normal;
+}
+
 
 /* ====== HEADER ====== */
 
 header h1 {
     font-size: 1.25em;
     font-family: "Rock Salt", sans-serif;
+    font-weight: normal;
     text-shadow: 1px 1px 1px rgba(20, 20, 20, .7); /* offset-x | offset-y | blur-radius | color */
 }
 
@@ -91,7 +96,7 @@ header {
 	  border-bottom: 5px solid #a89d8a;
     -moz-box-shadow: 0 0 10px #555555;
     -webkit-box-shadow: 0 0 10px #555555;
-	  box-shadow: 0 0 10px #555555; /* offset-x | offset-y | blur-radius | color */
+	  box-shadow: 0 0 10px #555555;
 }
 
 #logo {
@@ -109,7 +114,10 @@ header {
     border-radius: 7px;
     -moz-box-shadow: 1px 1px 1px rgba(20, 20, 20, .7);
     -webkit-box-shadow: 1px 1px 1px rgba(20, 20, 20, .7);
-    box-shadow: 1px 1px 1px rgba(20, 20, 20, .7); /* offset-x | offset-y | blur-radius | color */
+    box-shadow: 1px 1px 1px rgba(20, 20, 20, .7);
+    -moz-transition: background-color 0.6s ease;
+    -webkit-transition: background-color 0.6s ease;
+    transition: background-color 0.6s ease;  /* property name | duration | timing-function*/
 }
 
 #menu-button:hover {
@@ -154,6 +162,9 @@ nav li a:hover {
     color: #6b2416;
     border-radius: 5px;
     padding: 0.8em;
+    -moz-transition: background-color 0.6s ease;
+    -webkit-transition: background-color 0.6s ease;
+    transition: background-color 0.6s ease;
 }
 
 
@@ -168,6 +179,7 @@ nav li a:hover {
 .title {
     text-align: center;
     padding: 0 0 1em 0;
+    font-size: 1.875em;
 }
 
 .intro-image {
@@ -193,12 +205,15 @@ blockquote {
 
 .flex-box {
     -moz-display: flex;
+    -ms-display: flex;
     -webkit-display: flex;
     display: flex;
     -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap; /*flex-direction | flex-wrap*/
     -moz-justify-content: center;
+    -ms-justify-content: space-around;
     -webkit-justify-content: center;
     justify-content: center;
     clear: both;
@@ -217,10 +232,12 @@ blockquote {
 
 #gallery h2 {
     padding: 1em 0;
+    font-size: 1.625em;
 }
 
 #gallery h3 {
     color:  #6d2416;
+    font-size: 1.5em;
 }
 
 #gallery li {
@@ -229,6 +246,9 @@ blockquote {
 	  background-color: #a89d8a;
 	  border-radius: 5px;
 	  border: 10px solid #a89d8a;
+    -moz-transition: border-color 0.6s ease;
+    -webkit-transition: border-color 0.6s ease;
+    transition: border-color 0.6s ease;
 }
 
 h2#pottery {
@@ -270,7 +290,6 @@ h2#pottery {
     padding: 0 0 0.2em 0;
 }
 
-
 /* Create figcaption overlay */
 
 figure {
@@ -298,15 +317,33 @@ figcaption:hover {
 /*Scale images on hover*/
 
 figure {
-    -webkit-transition: all .4s;
-	  -moz-transition: all .4s;
-	  transition: all .4s;
+	  -moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+	  transition: all 0.4s; /* property name | duration */
 }
 
 figure:hover {
-    -webkit-transform: scale(.95);
     -moz-transform: scale(.95);
-    transform: scale(.95);
+    -webkit-transform: scale(.95);
+    transform: scale(.95); /* Shrinks element - scaleX(.95) and scaleY(.95) */
+}
+
+#gallery .flex-item img {
+	  border: 4px solid #292d38;
+    border-radius: 5px;
+	  -moz-transition: border-color 0.6s ease;
+    -webkit-transition: border-color 0.6s ease;
+	  transition: border-color 0.6s ease;
+}
+
+#gallery .flex-item img:hover {
+	  border-color: #d5caba;
+}
+
+.lightbox-credit a:hover,
+.back a:hover,
+.next a:hover {
+    color: #d5caba;
 }
 
 
@@ -315,6 +352,18 @@ figure:hover {
 #about {
     margin: 0 auto;
     padding: 6em 2em;
+}
+
+#about h2 {
+    font-size: 1.625em;
+}
+
+#about h3 {
+    font-size: 1.5em;
+}
+
+#about h2,
+#about h3 {
     text-align: center;
 }
 
@@ -327,16 +376,12 @@ figure:hover {
 
 .about-me {
     margin: 1em auto;
-    max-width: 80%;
+    max-width: 40em;
 }
 
 .about-me p {
     color: #303030;
     font-size: 1.125em;
-}
-
-.about-me h2 {
-    padding: 1em 0;
 }
 
 
@@ -348,12 +393,8 @@ figure:hover {
     text-align: center;
 }
 
-#contact ul {
-    padding: 0;
-}
-
-#contact-info h2 {
-    padding: 3em 0 2em 0;
+#contact h2 {
+    font-size: 1.625em;
 }
 
 .contact-image img {
@@ -363,15 +404,64 @@ figure:hover {
 	  border-radius: 5px;
 }
 
-.mail a {
-    color: #6d2416;
-    font-size: 1.125em;
+.text-input,
+textarea {
+    display: block;
+    margin: 0.5em auto;
+    padding: 0 0 0 1em;
+    width: 90%;
+    border: 1px solid #969696;
+    border-radius: 5px;
+    background-color: #fafafa;
+    color: #333;
 }
 
-.mail a:link {
+.text-input {
+    height: 3em;
+}
+
+textarea {
+    height: 10em;
+    padding-top: 0.5em;
+}
+
+.send-email {
+    display: block;
+    margin: 0.5em auto;
+    padding: 0.6em 2em;
+    border: 1px solid #baad99;
+    border-radius: 5px;
+    background-color: #702a1b;
+    color: #baad99;
+    font-size: 1.125em;
+    -moz-transition: background-color 0.6s ease;
+    -webkit-transition: background-color 0.6s ease;
+    transition: background-color 0.6s ease;
+}
+
+.send-email:hover {
+    border: 1px solid #702a1b;
     background-color: #baad99;
-    color: #6d2416;
+    color: #702a1b;
+}
+
+
+/* ====== THANK YOU FOR THE EMAIL ====== */
+
+#thanks {
+    margin: 0 auto;
+    padding: 10em 0 8em 0;
+    text-align: center;
+}
+
+#thanks a {
+    color: #702a1b;
     border-bottom: 1px dotted;
+    padding: 0.2em;
+}
+
+#thanks h2 a:hover {
+    color: #d5caba;
 }
 
 
@@ -390,6 +480,8 @@ footer {
     z-index: 100;
     text-align: center;
     border-top: 2px solid #a89d8a;
+	  -moz-box-shadow: 0 0 2px #555555;
+	  -webkit-box-shadow: 0 0 2px #555555;
 	  box-shadow: 0 0 2px #555555;
 }
 
@@ -418,6 +510,12 @@ footer a {
 	      width: 30.3333333333%;
     }
 
+    /*Contact*/
+    .text-input,
+    textarea {
+        max-width: 40em;
+    }
+
     blockquote {
         max-width: 20em;
     }
@@ -430,10 +528,6 @@ footer a {
         display: inline-block;
         width: 6em;
         margin: 0 2em 0 0;
-    }
-
-    .about-me {
-        max-width: 70%;
     }
 
 }
@@ -455,30 +549,14 @@ footer a {
     header p {
         font-size: 1.4375em;
     }
-    
+
     #gallery li {
         width: 22%;
-    }
-
-    .about-me {
-        max-width: 60%;
-    }
-
-}
-
-@media screen and (min-width: 75em) {
-
-    .about-me {
-        max-width: 50%;
     }
 
 }
 
 @media screen and (min-width: 87.5em) {
-
-    .about-me {
-        max-width: 40%;
-    }
 
     blockquote {
         max-width: 40em;
@@ -494,14 +572,6 @@ footer a {
 
     #menu-button {
         margin-right: 7em;
-    }
-
-}
-
-@media screen and (min-width: 100em) {
-
-    .about-me {
-        max-width: 35%;
     }
 
 }

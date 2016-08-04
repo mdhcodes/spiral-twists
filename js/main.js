@@ -6,7 +6,7 @@ var showHideMenu = function() {
     var nav = document.getElementById("nav");
     var header = document.getElementById("header");
     var menuIsDisplayed = false;
-    
+
     menuButton.onclick = function() {
         if(menuIsDisplayed) {
             navMenu.style.display = "none";
