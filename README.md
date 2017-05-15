@@ -1,4 +1,4 @@
 # spiral_twists
-Pottery website
+Pottery website - Digital gallery of my wheel thrown and hand built ceramics
 
 http://spiraltwists.com/
