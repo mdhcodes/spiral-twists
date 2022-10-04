@@ -1,32 +1,94 @@
 // Show and Hide Navigation Menu
 
-var showHideMenu = function() {
-    var menuButton = document.getElementById("menu-button");
-    var navMenu = document.getElementById("nav-menu");
-    var nav = document.getElementById("nav");
-    var header = document.getElementById("header");
-    var menuIsDisplayed = false;
+window.addEventListener('DOMContentLoaded', event => {
 
-    menuButton.onclick = function() {
-        if(menuIsDisplayed) {
-            navMenu.style.display = "none";
-            nav.style.borderTop = "none";
-            header.style.paddingBottom = "0";
-            menuIsDisplayed = false;
-        } else {
-            navMenu.style.display = "block";
-            nav.style.borderTop = "thin solid #baad99";
-            header.style.paddingBottom = "1em";
-            menuIsDisplayed = true;
-        }
-    };
+	// Enhance modal/carousel functionality
 
-    navMenu.onclick = function() {
-        navMenu.style.display = "none";
-        nav.style.borderTop = "none";
-        header.style.paddingBottom = "0";
-        menuIsDisplayed = false;
-    };
-};
+	// https://stackoverflow.com/questions/67755844/modal-carousel-bootstrap-5-not-showing-right-image
+	// https://www.codeply.com/p/nBRkzTzOCH
 
-showHideMenu();
+	const showClickedCarouselImage = () => {
+
+		const myCarousel = document.querySelector('#carouselGalleryIndicators')
+		const myModalEl = document.getElementById('galleryModal')
+
+		if (myModalEl) {
+			myModalEl.addEventListener('show.bs.modal', (event) => {
+				const trigger = event.relatedTarget
+				const bsCarousel = bootstrap.Carousel.getInstance(myCarousel)
+				bsCarousel.to(trigger.dataset.bsSlideTo)
+			})
+		}
+	}
+	
+	showClickedCarouselImage()
+
+
+	
+	// https://css-tricks.com/working-with-javascript-media-queries/
+	
+	const toggleNav = () => {
+
+		const navToggle = document.querySelector('.nav-toggle')
+		const navIcon = document.querySelector('.nav-icon')
+		const hiddenNav = document.querySelector('.hidden-nav')		
+
+		let visible = true
+
+		// https://stackoverflow.com/questions/64800391/how-to-make-navigation-menu-disappear-when-clicking-anywhere-on-the-screen-with
+
+		navToggle.addEventListener('click', function(e) {		
+			
+			//stop propagation of document click
+			e.stopPropagation()
+			
+			if (visible) {
+				navIcon.innerHTML = '<i class="fa-solid fa-x fa-xl"></i>'
+				hiddenNav.style.transform = 'translateX(0%)'
+				visible = true
+			} else {
+				navIcon.innerHTML = '<i class="fa-solid fa-bars fa-xl"></i>'
+				hiddenNav.style.transform = 'translateX(200%)'
+				visible = false
+			}		
+
+		})
+
+	}
+
+	toggleNav()
+
+
+	// Hide menu when document / nav link is clicked
+	
+	const hideNavAfterSelection = () => {
+
+		const hiddenNav = document.querySelector('.hidden-nav')
+		const navIcon = document.querySelector('.nav-icon')
+
+		document.onclick = function() {
+			navIcon.innerHTML = '<i class="fa-solid fa-bars fa-xl"></i>'
+				hiddenNav.style.transform = 'translateX(200%)'
+		}
+
+	}
+
+	hideNavAfterSelection()
+
+	
+
+	const removeClass = () => {
+
+		const mediaQuery = window.matchMedia('(max-width: 780px)')
+		const logo = document.querySelector('.logo')
+
+		if (mediaQuery.matches) {
+			logo.classList.remove('mb-3')
+		}
+
+	}
+
+	removeClass()
+
+	
+})

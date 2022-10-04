@@ -1,0 +1,404 @@
+/* ====== GLOBAL VARIABLES ====== */
+
+/* Thank you Kevin Powell for sharing a trick to easily apply alpha colors to variables. rgba( var(--clr-rust) / 0.95) in Build a Space Travel Website  - Frontend Mentor Design Challenge */
+:root {
+	/* Colors */
+	--clr-clay: 186 173 153;
+	--clr-rust: 101 49 35;
+	--clr-gray: 48 48 48; 
+	--clr-hover: 213 202 186;
+	--clr-border: 168 157 138; 
+	--clr-shadow: 85 85 85; 
+	--clr-dark: 41 45 56;
+
+	/* Font Families */
+	--ff-sans: 'Lato', sans-serif;
+	--ff-logo: 'Rock Salt', cursive;
+}
+
+/* ====== GENERAL ====== */
+
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--ff-sans);
+  font-size: 16px;
+	color: rgb(var(--clr-rust));
+	background: rgb(var(--clr-clay));
+	line-height: 1.5;
+	text-align: center;
+}
+
+main {
+	max-width: 90%;
+	margin: 0 auto;
+	padding: 4em 0 0;
+}
+
+a {
+	color: rgb(var(--clr-clay)) !important;
+}
+
+a:hover {
+	color: rgb( var(--clr-hover) ) !important;
+}
+
+.intro,
+#gallery,
+#about,
+#contact {
+	margin-top: 6em;
+	padding-bottom: 6em;
+	border-bottom: 3px solid rgb( var(--clr-border) );
+}
+
+#gallery h2,
+#about h2,
+#contact h2,
+.forms > h2 {
+	padding-bottom: 2em;
+}
+ 
+.intro-image,
+#gallery img,
+.about-image img,
+.contact-image img,
+.forms img {
+	border: 10px solid rgb( var(--clr-border) ) !important;
+	border-radius: 5px;
+}
+
+/* https://stackoverflow.com/questions/11501025/div-anchors-scrolling-too-far */
+
+#gallery,
+#about {
+	scroll-margin-top: 150px;
+}
+
+
+/* ====== HEADER ====== */
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: rgba( var(--clr-rust) / 0.95);
+	padding-left: 4em;
+	padding-right: 4em;
+	padding-top: 1rem !important; /* revise .py-3 rule removing padding-bottom: 1rem !important; */
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	border-bottom: 5px solid rgb( var(--clr-border) ) !important; 
+	-webkit-box-shadow: 0 0 10px rgb( var(--clr-shadow) ); 
+	-moz-box-shadow: 0 0 10px rgb( var(--clr-shadow) );
+	/* To use box-shadow in Internet Explorer 9 or later, you must set border-collapse to separate */
+	border-collapse: separate;
+	box-shadow: 0 0 10px rgb( var(--clr-shadow) );
+}
+
+.logo {
+	color: rgb(var(--clr-clay)) !important;
+}
+
+.logo > span {
+	font-family: var(--ff-logo);
+}
+
+.logo:hover {
+	color: rgb( var(--clr-hover) ) !important;
+}
+
+.logo > p {
+	font-size: 1.4em;
+}
+
+.hidden-nav {
+	display: none;
+}
+
+.nav {
+	margin-top: 1em;
+	font-size: 1.2em;
+}
+
+.nav-pills .nav-pills .show > .nav-link {
+  background-color: rgb( var(--clr-clay) );
+	color: rgb( var(--clr-rust) ) !important;
+}
+
+button {
+	font-family: inherit;
+	overflow: visible;
+  -webkit-appearance: button;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.nav-toggle {
+	height: 55px;
+	align-self: center;
+	background: none;
+	color: rgb( var(--clr-clay) );
+	border-radius: 7px; /*.25rem;*/	
+	font-size: 1.2em;
+	padding: .5rem 1rem;
+	text-transform: uppercase;
+	-moz-transition: background-color 0.6s ease;
+	-webkit-transition: background-color 0.6s ease;
+	transition: background-color 0.6s ease;
+	display: none;
+}
+
+.nav-link:hover {
+  background-color: rgb( var(--clr-clay) );
+	color:rgb( var(--clr-rust) ) !important;	
+}
+
+.dropdown-menu {
+	background-color:rgba( var(--clr-rust) / 0.95);
+}
+
+.dropdown-item {
+	color: rgb( var(--clr-clay) ) !important;
+}
+
+.dropdown-item:hover {
+	color: rgb( var(--clr-rust) ) !important;
+	background-color:rgb( var(--clr-clay) );
+}
+
+/* Interactive dropdown navigation */
+.current {
+	color: rgb( var(--clr-rust) ) !important;
+	background-color:rgb( var(--clr-clay) ) !important;
+}
+
+
+/* ====== INTRO ====== */
+
+.intro {
+	padding-top: 6em !important;
+}
+
+.intro-title {
+	padding: 0 0 1.4em 0;
+}
+
+
+/* ====== GALLERY ====== */
+
+/* https://www.w3schools.com/HOWTO/howto_css_image_overlay_title.asp */
+/* https://stackoverflow.com/questions/21086385/how-to-make-in-css-an-overlay-over-an-image */
+
+/* Create figcaption overlay */
+
+figure {
+	position: relative;
+}
+
+figcaption {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 0;
+	left: 0;
+	background-color: rgb( var(--clr-border) / 0.9);
+	color:rgba( var(--clr-rust) );
+	opacity: 0;
+}
+
+figcaption h3 {
+	padding-top: 3em;
+}
+
+/* Show figcaption overlay on hover */
+
+figcaption:hover {
+	opacity: 1;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/transition */
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/transform */
+
+
+/*Scale images on hover*/
+
+figure {
+	-moz-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	/* property name | duration */
+	transition: all 0.4s; 
+}
+
+figure:hover {
+	-moz-transform: scale(.95);
+	-webkit-transform: scale(.95);
+	/* Shrinks element - scaleX(.95) and scaleY(.95) */
+	transform: scale(.95); 
+}
+
+#gallery img {
+	-moz-transition: border-color 0.6s ease;
+	-webkit-transition: border-color 0.6s ease;
+	transition: border-color 0.6s ease;
+}
+
+#gallery img:hover {
+	border-color: rgb( var(--clr-hover) );
+}
+
+
+/* ====== ABOUT ====== */
+
+.about-image {
+	margin-bottom: 6em;
+}
+
+.about-me {
+	margin: 1em auto;
+	max-width: 40em;
+}
+
+.about-me p {
+	color: rgb( var(--clr-gray) );
+}
+
+
+/* ====== FOOTER ====== */
+
+/* https://stackoverflow.com/questions/25671073/footer-below-content-but-not-floating-mid-air-if-not-enough-content */
+
+body { 
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1;
+}
+
+footer {
+	background-color: rgba( var(--clr-rust) / 0.95);
+	color: rgb(var(--clr-clay));
+	padding-top: 1em;
+	border-bottom: 5px solid rgb( var(--clr-border) ) !important; 
+	-webkit-box-shadow: 0 0 10px rgb( var(--clr-shadow) );
+	-moz-box-shadow: 0 0 10px rgb( var(--clr-shadow) );
+	/* To use box-shadow in Internet Explorer 9 or later, you must set border-collapse to separate */
+	border-collapse: separate;
+	box-shadow: 0 0 10px rgb( var(--clr-shadow) );
+	line-height: 1;
+}
+
+footer a {
+	border-bottom: 1px dotted;
+}
+
+
+/* ====== QUOTE ====== */
+
+blockquote {
+	margin: 0 auto;
+	padding: 3em 0 6em 0;
+	font-size: 1.5em;
+}
+
+
+/* ====== FORMS PAGES ====== */
+
+.forms {
+	padding-top: 12em;
+	padding-bottom: 8em;
+}
+
+
+/* ====== MEDIA QUERIES ====== */
+
+@media (max-width: 1400px) {
+	.col-3 {
+		width: 40%;
+	}
+}
+
+@media (max-width: 1100px) { 
+
+	#gallery,
+	#about {
+		scroll-margin-top: 200px;
+	}
+
+	header {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	main {
+		padding-top: 5em;
+	}
+
+	.forms {
+		padding-top: 12em;
+	}
+}
+
+
+@media (max-width: 900px) {	
+	
+	.col-3 {
+		width: 50%;
+	}
+
+	.about-image {
+		width: 70%;
+		margin: 0 auto;
+	}
+}
+
+
+@media (max-width: 780px) {
+	
+	/*======== HAMBURGER ========*/
+
+	.main-nav {
+		display: none;
+	}
+
+	.hidden-nav {
+		display: block;
+		background-color: rgba( var(--clr-rust) / 0.95);
+		flex-direction: column;
+		position: fixed;
+		right: 70px;
+		z-index: 1000;
+		padding: 2em;
+		border-radius: 5px;
+		transform: translateX(200%);
+		transition: transform 500ms ease-in-out;
+	}
+
+	.nav-link {
+		margin: .5rem;
+	}
+
+	.nav-toggle {		
+		display: block;
+		position: absolute;
+		right: 0;
+	}
+
+	.hidden-nav,
+	.nav-toggle:hover  {
+		color: rgb( var(--clr-hover) );
+	}
+}
