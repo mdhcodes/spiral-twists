@@ -8,7 +8,6 @@ window.addEventListener('DOMContentLoaded', event => {
 	// https://www.codeply.com/p/nBRkzTzOCH
 
 	const showClickedCarouselImage = () => {
-
 		const myCarousel = document.querySelector('#carouselGalleryIndicators')
 		const myModalEl = document.getElementById('galleryModal')
 
@@ -20,75 +19,68 @@ window.addEventListener('DOMContentLoaded', event => {
 			})
 		}
 	}
-	
+
 	showClickedCarouselImage()
 
 
 	
 	// https://css-tricks.com/working-with-javascript-media-queries/
 	
-	const toggleNav = () => {
+	let barsVisible = true
 
+	const toggleNav = () => {
 		const navToggle = document.querySelector('.nav-toggle')
 		const navIcon = document.querySelector('.nav-icon')
-		const hiddenNav = document.querySelector('.hidden-nav')		
-
-		let visible = true
+		const hiddenNav = document.querySelector('.hidden-nav')
 
 		// https://stackoverflow.com/questions/64800391/how-to-make-navigation-menu-disappear-when-clicking-anywhere-on-the-screen-with
 
-		navToggle.addEventListener('click', function(e) {		
-			
+		navToggle.addEventListener('click', (e) => {			
 			//stop propagation of document click
 			e.stopPropagation()
 			
-			if (visible) {
+			if (barsVisible) {
 				navIcon.innerHTML = '<i class="fa-solid fa-x fa-xl"></i>'
 				hiddenNav.style.transform = 'translateX(0%)'
-				visible = true
+				barsVisible = false
 			} else {
 				navIcon.innerHTML = '<i class="fa-solid fa-bars fa-xl"></i>'
 				hiddenNav.style.transform = 'translateX(200%)'
-				visible = false
+				barsVisible = true
 			}		
-
 		})
-
 	}
 
 	toggleNav()
 
 
+
 	// Hide menu when document / nav link is clicked
 	
 	const hideNavAfterSelection = () => {
-
 		const hiddenNav = document.querySelector('.hidden-nav')
 		const navIcon = document.querySelector('.nav-icon')
 
-		document.onclick = function() {
+		document.onclick = () => {
 			navIcon.innerHTML = '<i class="fa-solid fa-bars fa-xl"></i>'
-				hiddenNav.style.transform = 'translateX(200%)'
+			hiddenNav.style.transform = 'translateX(200%)'
+			barsVisible = true
 		}
-
 	}
 
 	hideNavAfterSelection()
-
 	
 
-	const removeClass = () => {
 
+	const removeClass = () => {
 		const mediaQuery = window.matchMedia('(max-width: 780px)')
 		const logo = document.querySelector('.logo')
 
 		if (mediaQuery.matches) {
 			logo.classList.remove('mb-3')
 		}
-
 	}
 
 	removeClass()
-
 	
 })
